@@ -46,7 +46,7 @@ class RCP_Download_Monitor {
 			return;
 
 		// Check if user can post a job
-		add_filter( 'dlm_can_download', array( $this, 'can_download' ) );
+		add_filter( 'dlm_can_download', array( $this, 'can_download' ), 10, 3 );
 
 	}
 
@@ -58,8 +58,14 @@ class RCP_Download_Monitor {
 	 * @since 1.0
 	 * @return bool
 	 */
-	public function can_download() {
-		return rcp_is_active();
+	public function can_download( $can, $download, $version ) {
+
+		//echo '<pre>';print_r( $download ); echo '</pre>'; exit;
+
+		if( $download->is_members_only() && ! rcp_is_active() )
+			$can = false;
+
+		return $can;
 	}
 
 
