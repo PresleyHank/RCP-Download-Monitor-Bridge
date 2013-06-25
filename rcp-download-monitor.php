@@ -60,8 +60,6 @@ class RCP_Download_Monitor {
 	 */
 	public function can_download( $can, $download, $version ) {
 
-		//echo '<pre>';print_r( $download ); echo '</pre>'; exit;
-
 		if( $download->is_members_only() && ! rcp_is_active() )
 			$can = false;
 
