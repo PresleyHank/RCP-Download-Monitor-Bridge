@@ -3,6 +3,7 @@
  * Plugin name: RCP - Download Monitor Bridge
  * Description: Limit file downloads to paid subscribers
  * Author: Pippin Williamson
+ * Version: 1.0
  */
 
 
