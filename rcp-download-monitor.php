@@ -3,7 +3,7 @@
 Plugin Name: RCP - Download Monitor Bridge
 Plugin URL: http://pippinsplugins.com/rcp-download-monitor
 Description: Limit file downloads to paid subscribers
-Version: 1.0
+Version: 1.0.1
 Author: Pippin Williamson
 Author URI: http://pippinsplugins.com
 Contributors: mordauk

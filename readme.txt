@@ -6,7 +6,7 @@ Donate link: http://pippinsplugins.com/support-the-site/
 Tags: Restrict content, member only, registered, logged in, restricted access, restrict access, limiit access, read-only, read only, Download Monitor, member files, subscription downloads
 Requires at least 3.3
 Tested up to 3.5.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Limit Download Monitor file downloads to paid subscribers in Restrict Content Pro.
 
@@ -27,6 +27,11 @@ Learn more about Restrict Content Pro: http://pippinsplugins.com/restrict-conten
 3. In Downloads, set files to "Member Only"
 
 == Changelog ==
+
+
+= 1.0.1 =
+
+* Fixed version numbers.
 
 = 1.0 =
 
