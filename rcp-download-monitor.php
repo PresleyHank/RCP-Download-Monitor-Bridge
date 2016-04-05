@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: RCP - Download Monitor Bridge
-Plugin URL: http://pippinsplugins.com/rcp-download-monitor
+Plugin URL: https://restrictcontentpro.com/downloads/download-monitor/
 Description: Limit file downloads to paid subscribers
-Version: 1.0.1
-Author: Pippin Williamson
-Author URI: http://pippinsplugins.com
-Contributors: mordauk
+Version: 1.0.2
+Author: Restrict Content Pro Team
+Author URI: https://restrictcontentpro.com
+Contributors: mordauk, mindctrl
 */
 
 
