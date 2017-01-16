@@ -52,6 +52,9 @@ class RCP_Download_Monitor {
 		// Add content restriction meta box to download post type.
 		add_filter( 'rcp_metabox_post_types', array( $this, 'add_metabox' ) );
 
+		// Hide additional options section.
+		add_filter( 'rcp_metabox_show_additional_options', array( $this, 'hide_additional_options' ) );
+
 		// Check if user can download the file.
 		add_filter( 'dlm_can_download', array( $this, 'can_download' ), 10, 3 );
 
@@ -72,6 +75,25 @@ class RCP_Download_Monitor {
 		}
 
 		return $post_types;
+	}
+
+	/**
+	 * Hide additional options section for DLM downloads.
+	 *
+	 * @param bool $show_options
+	 *
+	 * @access public
+	 * @since 1.0.3
+	 * @return bool
+	 */
+	public function hide_additional_options( $show_options ) {
+
+		if ( 'dlm_download' == get_post_type() ) {
+			$show_options = false;
+		}
+
+		return $show_options;
+
 	}
 
 
