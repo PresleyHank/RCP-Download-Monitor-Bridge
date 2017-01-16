@@ -45,18 +45,42 @@ class RCP_Download_Monitor {
 	 * @since 1.0
 	 */
 	private function init() {
-		// Check for RCP and WP Job Manager
+		// Check for RCP and Download Monitor
 		if( ! function_exists( 'rcp_is_active' ) || ! class_exists( 'WP_DLM' ) )
 			return;
 
-		// Check if user can post a job
+		// Add content restriction meta box to download post type.
+		add_filter( 'rcp_metabox_post_types', array( $this, 'add_metabox' ) );
+
+		// Check if user can download the file.
 		add_filter( 'dlm_can_download', array( $this, 'can_download' ), 10, 3 );
 
+	}
+
+	/**
+	 * Add meta box to 'Download' post type.
+	 *
+	 * @param array $post_types
+	 *
+	 * @access public
+	 * @since 1.0.3
+	 * @return array
+	 */
+	public function add_metabox( $post_types ) {
+		if ( is_array( $post_types ) ) {
+			$post_types[ 'dlm_download' ] = 'dlm_download';
+		}
+
+		return $post_types;
 	}
 
 
 	/**
 	 * Can the current user download files?
+	 *
+	 * @param bool                 $can      Whether or not they can download the file.
+	 * @param DLM_Download         $download Download object.
+	 * @param DLM_Download_Version $version  Download version.
 	 *
 	 * @access public
 	 * @since 1.0
@@ -64,12 +88,25 @@ class RCP_Download_Monitor {
 	 */
 	public function can_download( $can, $download, $version ) {
 
-		if( $download->is_members_only() && ! rcp_is_active() )
-			$can = false;
+		if( version_compare( RCP_PLUGIN_VERSION, '2.7', '<' ) ) {
+
+			if( $download->is_members_only() && ! rcp_is_active() && 'free' != rcp_get_status() )
+				$can = false;
+
+		} else {
+
+			$user_id = get_current_user_id();
+			$member  = new RCP_Member( $user_id );
+
+			if ( ! $member->can_access( $download->post->ID ) ) {
+				$can = false;
+			}
+
+		}
 
 		return $can;
 	}
 
 
 }
-add_action( 'plugins_loaded', array( 'RCP_Download_Monitor', 'get_instance' ) );
+add_action( 'plugins_loaded', array( 'RCP_Download_Monitor', 'get_instance' ), 20 );
