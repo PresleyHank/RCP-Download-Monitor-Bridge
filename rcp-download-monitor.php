@@ -3,7 +3,7 @@
 Plugin Name: RCP - Download Monitor Bridge
 Plugin URL: https://restrictcontentpro.com/downloads/download-monitor/
 Description: Limit file downloads to paid subscribers
-Version: 1.0.2
+Version: 1.0.3
 Author: Restrict Content Pro Team
 Author URI: https://restrictcontentpro.com
 Contributors: mordauk, mindctrl
