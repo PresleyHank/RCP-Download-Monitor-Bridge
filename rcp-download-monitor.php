@@ -118,10 +118,7 @@ class RCP_Download_Monitor {
 
 		} else {
 
-			$user_id = get_current_user_id();
-			$member  = new RCP_Member( $user_id );
-
-			if ( ! $member->can_access( $download->post->ID ) ) {
+			if ( ! rcp_user_can_access( get_current_user_id(), $download->post->ID ) ) {
 				$can = false;
 			}
 
