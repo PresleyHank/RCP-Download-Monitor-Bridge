@@ -1,13 +1,13 @@
 <?php
-/*
-Plugin Name: RCP - Download Monitor Bridge
-Plugin URL: https://restrictcontentpro.com/downloads/download-monitor/
-Description: Limit file downloads to paid subscribers
-Version: 1.0.3
-Author: Restrict Content Pro Team
-Author URI: https://restrictcontentpro.com
-Contributors: mordauk, mindctrl
-*/
+/**
+ * Plugin Name: RCP - Download Monitor Bridge
+ * Plugin URL: https://restrictcontentpro.com/downloads/download-monitor/
+ * Description: Limit file downloads to paid subscribers
+ * Version: 1.0.3
+ * Author: Restrict Content Pro Team
+ * Author URI: https://restrictcontentpro.com
+ * Contributors: mordauk, mindctrl
+ */
 
 
 class RCP_Download_Monitor {
@@ -28,6 +28,7 @@ class RCP_Download_Monitor {
 	 * @var object
 	 * @access public
 	 * @since 1.0
+	 * @return RCP_Download_Monitor
 	 */
 	public static function get_instance() {
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof RCP_Download_Monitor ) ) {
