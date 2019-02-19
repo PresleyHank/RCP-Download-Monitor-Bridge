@@ -118,7 +118,13 @@ class RCP_Download_Monitor {
 
 		} else {
 
-			if ( ! rcp_user_can_access( get_current_user_id(), $download->post->ID ) ) {
+			if ( method_exists( $download, 'get_id' ) ) {
+				$download_id = $download->get_id();
+			} else {
+				$download_id = $download->post->ID;
+			}
+
+			if ( ! rcp_user_can_access( get_current_user_id(), $download_id ) ) {
 				$can = false;
 			}
 
