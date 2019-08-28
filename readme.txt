@@ -1,6 +1,6 @@
 === Restrict Content Pro - Download Monitor ===
-Author URI: https://restrictcontentpro.com
-Author: Restrict Content Pro Team
+Author URI: https://sandhillsdev.com
+Author: Sandhills Development, LLC
 Contributors: mordauk, mindctrl, nosegraze
 Donate link: http://pippinsplugins.com/support-the-site/
 Tags: Restrict content, member only, registered, logged in, restricted access, restrict access, limiit access, read-only, read only, Download Monitor, member files, subscription downloads

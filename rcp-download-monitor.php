@@ -4,8 +4,8 @@
  * Plugin URL: https://restrictcontentpro.com/downloads/download-monitor/
  * Description: Limit file downloads to active Restrict Content Pro members.
  * Version: 1.0.4
- * Author: Restrict Content Pro Team
- * Author URI: https://restrictcontentpro.com
+ * Author: Sandhills Development, LLC
+ * Author URI: https://sandhillsdev.com
  * Contributors: mordauk, mindctrl
  */
 
